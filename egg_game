@@ -213,6 +213,23 @@ void drawBasket(int i, int j)
     glVertex2f(10.0 + i, 10.0 + j);
     glEnd();
 
+// Handle
+    glColor3f(0.3, 0.15, 0.05);
+    glBegin(GL_LINE_STRIP);
+    for (float t = 0; t <= PI; t += 0.1)
+        glVertex2f(i + 30 + 30 * cos(t), j + 30 + 20 * sin(t));
+    glEnd();
+}
+
+// ---------- Egg Reset ----------
+void egg_start()
+{
+    egg_yc = hen_y - 20;
+    egg_xc = hen_x + 70;
+    dropped_eggs++;
+}
+
+
 
 
   
