@@ -187,6 +187,15 @@ void drawEgg()
     glEnd();
 }
 
+// ---------- Basket ----------
+void drawBasket(int i, int j)
+{
+    if (i >= a - 60)
+        i = a - 60;
+    if (i <= 0)
+        i = 0;
+
+
 
 
 
