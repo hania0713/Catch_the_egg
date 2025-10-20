@@ -155,7 +155,14 @@ void drawHen(int i, int j)
     glVertex2f(i + 120, j + 65);
     glEnd();
 
-
+ // Comb
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex2f(i + 95, j + 85);
+    glVertex2f(i + 100, j + 95);
+    glVertex2f(i + 110, j + 95);
+    glVertex2f(i + 115, j + 85);
+    glEnd();
 
 
 
