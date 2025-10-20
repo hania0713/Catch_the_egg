@@ -393,6 +393,13 @@ void update(int value)
   glutPostRedisplay();
     glutTimerFunc(16, update, 0);
 }
+// ---------- Main ----------
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(a, b);
+    glutCreateWindow("Catch The Egg - Deluxe Edition (Enhanced)");
 
 
   
