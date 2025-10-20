@@ -228,6 +228,23 @@ void egg_start()
     egg_xc = hen_x + 70;
     dropped_eggs++;
 }
+// ---------- Check Catch & Miss ----------
+void checkCatch()
+{
+    if (egg_yc <= basket_y + 40 && (egg_xc >= basket_x && egg_xc <= basket_x + 60))
+    {
+        eggs_caught++;
+        egg_start();  // reset after catch
+    }
+    else if (egg_yc <= 0)
+    {
+        missed_eggs++;
+        egg_start();  // reset after miss
+        if (missed_eggs >= 10)
+            gameOver = 1;
+    }
+}
+
 
 
 
