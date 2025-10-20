@@ -33,6 +33,23 @@ void drawText(float x, float y, const char *string, void *font)
         glutBitmapCharacter(font, *c);
 }
 
+// ---------- Gradient Background ----------
+void drawSky()
+{
+    glBegin(GL_QUADS);
+    glColor3f(0.6, 0.8, 1.0);
+    glVertex2f(0, 0);
+    glColor3f(0.2, 0.5, 1.0);
+    glVertex2f(a, 0);
+    glColor3f(0.0, 0.3, 0.8);
+    glVertex2f(a, b);
+    glColor3f(0.2, 0.5, 1.0);
+    glVertex2f(0, b);
+    glEnd();
+}
+
+
+
 
 
   
