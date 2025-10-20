@@ -113,6 +113,21 @@ void drawHen(int i, int j)
     }
  glEnd();
 
+// Wing (flapping)
+    glPushMatrix();
+    glTranslatef(i + 70, j + 45, 0);
+    glRotatef(sin(wingAngle) * 20, 0, 0, 1);
+    glColor3f(0.9, 0.7, 0.4);
+    glBegin(GL_POLYGON);
+    for (int t = 0; t <= 360; t++)
+    {
+        float x = 0 + 20 * cos(t * PI / 180);
+        float y = 0 + 12 * sin(t * PI / 180);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glPopMatrix();
+
 
 
 
