@@ -75,6 +75,18 @@ void drawCloud(float x, float y)
     }
 }
 
+// ---------- Ground ----------
+void drawGround()
+{
+    glBegin(GL_QUADS);
+    glColor3f(0.2, 0.6, 0.2);
+    glVertex2f(0, 0);
+    glVertex2f(a, 0);
+    glColor3f(0.0, 0.4, 0.1);
+    glVertex2f(a, 100);
+    glVertex2f(0, 100);
+    glEnd();
+
 
 
 
