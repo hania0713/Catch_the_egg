@@ -1,0 +1,25 @@
+#include <windows.h>
+#include <GL/glut.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define PI 3.14159265358979323846
+
+// ---------- Variables ----------
+int eggs_caught = 0, missed_eggs = 0, level_count = 1;
+int egg_xc, egg_yc;
+int basket_x = 250, basket_y = 40;
+int a = 600, b = 650;
+int startGame = 0;
+int dropped_eggs = 0;
+int gameOver = 0;
+
+float speed_1 = 0.4, speed_2 = 0.6, speed_3 = 0.8, speed_4 = 1.0;
+
+int hen_x = 200, hen_y = 375;
+int henDir = 1;
+float wingAngle = 0;
+int wingDir = 1;
+
+float cloud1 = 100, cloud2 = 400;
