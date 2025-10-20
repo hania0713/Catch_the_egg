@@ -390,7 +390,9 @@ void update(int value)
         if (cloud2 > 650)
             cloud2 = -150;
     }
-
+  glutPostRedisplay();
+    glutTimerFunc(16, update, 0);
+}
 
 
   
