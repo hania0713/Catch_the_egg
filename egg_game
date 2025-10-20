@@ -147,6 +147,14 @@ void drawHen(int i, int j)
     }
     glEnd();
 
+// Beak
+    glColor3f(1.0, 0.6, 0.0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(i + 120, j + 70);
+    glVertex2f(i + 135, j + 75);
+    glVertex2f(i + 120, j + 65);
+    glEnd();
+
 
 
 
