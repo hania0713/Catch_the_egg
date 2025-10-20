@@ -101,6 +101,20 @@ void drawGround()
 // ---------- Hen ----------
 void drawHen(int i, int j)
 
+{
+    // Body
+    glColor3f(1.0, 0.8, 0.6);
+    glBegin(GL_POLYGON);
+    for (int t = 0; t <= 360; t++)
+    {
+        float x = i + 70 + 40 * cos(t * PI / 180);
+        float y = j + 50 + 25 * sin(t * PI / 180);
+        glVertex2f(x, y);
+    }
+ glEnd();
+
+
+
 
 
 
