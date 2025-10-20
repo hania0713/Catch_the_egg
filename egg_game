@@ -361,7 +361,35 @@ void keyboard(unsigned char key, int x, int y)
     if (key == 'q' || key == 'Q')
         exit(0);
 }
+// ---------- Update ----------
+void update(int value)
+{
+    if (startGame && !gameOver)
+    {
+        hen_x += henDir * 2;
+        if (hen_x >= 400)
+            henDir = -1;
+        if (hen_x <= 100)
+            henDir = 1;
 
+        // Animate wing
+        if (wingDir == 1)
+            wingAngle += 0.2;
+        else
+            wingAngle -= 0.2;
+        if (wingAngle > PI / 6)
+            wingDir = -1;
+        if (wingAngle < -PI / 6)
+            wingDir = 1;
+
+        // Move clouds
+        cloud1 += 0.2;
+        cloud2 += 0.1;
+        if (cloud1 > 650)
+            cloud1 = -100;
+        if (cloud2 > 650)
+            cloud2 = -150;
+    }
 
 
 
