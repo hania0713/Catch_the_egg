@@ -25,6 +25,14 @@ int wingDir = 1;
 float cloud1 = 100, cloud2 = 400;
 float sun_x = 500, sun_y = 580;
 
+// ---------- Utility ----------
+void drawText(float x, float y, const char *string, void *font)
+{
+    glRasterPos2f(x, y);
+    for (const char *c = string; *c != '\0'; c++)
+        glutBitmapCharacter(font, *c);
+}
+
 
 
   
