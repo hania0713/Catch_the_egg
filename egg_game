@@ -400,6 +400,19 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(a, b);
     glutCreateWindow("Catch The Egg - Deluxe Edition (Enhanced)");
+glClearColor(0.4, 0.7, 1.0, 0.0);
+    glMatrixMode(GL_PROJECTION);
+    gluOrtho2D(0, a, 0, b);
+
+    glutDisplayFunc(display);
+    glutKeyboardFunc(keyboard);
+    glutPassiveMotionFunc(basket_move);
+    glutTimerFunc(16, update, 0);
+    glutMainLoop();
+    return 0;
+}
+
+
 
 
   
