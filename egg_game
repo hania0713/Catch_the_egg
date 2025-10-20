@@ -172,6 +172,22 @@ void drawHen(int i, int j)
     glEnd();
 }
 
+// ---------- Egg ----------
+void drawEgg()
+{
+    float x, y;
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_POLYGON);
+    for (int t = 0; t <= 360; t++)
+    {
+        x = egg_xc + 8 * cos(t * PI / 180);
+        y = egg_yc + 12 * sin(t * PI / 180);
+        glVertex2f(x, y);
+    }
+    glEnd();
+}
+
+
 
 
   
