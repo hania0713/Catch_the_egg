@@ -195,6 +195,14 @@ void drawBasket(int i, int j)
     if (i <= 0)
         i = 0;
 
+// Wooden basket body
+    glColor3f(0.6, 0.3, 0.1);
+    glBegin(GL_QUADS);
+    glVertex2f(0.0 + i, 30.0 + j);
+    glVertex2f(10.0 + i, 10.0 + j);
+    glVertex2f(50.0 + i, 10.0 + j);
+    glVertex2f(60.0 + i, 30.0 + j);
+    glEnd();
 
 
 
