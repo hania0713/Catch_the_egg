@@ -15,6 +15,16 @@ int startGame = 0;
 int dropped_eggs = 0;
 int gameOver = 0;
 
+float egg_speed = 0.4;  // dynamic egg speed
+
+int hen_x = 200, hen_y = 375;
+int henDir = 1;
+float wingAngle = 0;
+int wingDir = 1;
+
+float cloud1 = 100, cloud2 = 400;
+float sun_x = 500, sun_y = 580;
+
 
 
   
