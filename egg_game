@@ -283,6 +283,84 @@ void display()
         return;
     }
 
+  // --- Game background ---
+    drawSky();
+    drawSun(sun_x, sun_y);
+    drawCloud(cloud1, 580);
+    drawCloud(cloud2, 600);
+    drawGround();
+
+    // Hen
+    drawHen(hen_x - 40, hen_y - 40);
+
+    // Egg
+    drawEgg();
+
+    // Basket
+    drawBasket(basket_x, basket_y);
+
+    // Scoreboard bar
+    glBegin(GL_QUADS);
+    glColor3f(0.2, 0.2, 0.2);
+    glVertex2f(0, 610);
+    glVertex2f(a, 610);
+    glColor3f(0.1, 0.1, 0.1);
+    glVertex2f(a, 650);
+    glVertex2f(0, 650);
+    glEnd();
+
+    glColor3f(1, 1, 1);
+    char info[50];
+    sprintf(info, "Score: %d", eggs_caught);
+    drawText(20, 625, info, GLUT_BITMAP_HELVETICA_18);
+    sprintf(info, "Missed: %d", missed_eggs);
+    drawText(250, 625, info, GLUT_BITMAP_HELVETICA_18);
+    sprintf(info, "Level: %d", level_count);
+    drawText(500, 625, info, GLUT_BITMAP_HELVETICA_18);
+
+    // ---- Level and Dynamic Speed ----
+    if (eggs_caught >= 30)
+        level_count = 4;
+    else if (eggs_caught >= 20)
+        level_count = 3;
+    else if (eggs_caught >= 10)
+        level_count = 2;
+    else
+        level_count = 1;
+
+    float base_speed = 0.4;
+    float level_boost = (level_count - 1) * 0.3;
+    float progressive_boost = eggs_caught * 0.02;
+    egg_speed = base_speed + level_boost + progressive_boost;
+
+    egg_yc -= egg_speed;
+    checkCatch();  // check after moving
+
+    glutSwapBuffers();
+}
+
+// ---------- Mouse ----------
+void basket_move(int x, int y)
+{
+    basket_x = x - 30;
+    glutPostRedisplay();
+}
+
+// ---------- Keyboard ----------
+void keyboard(unsigned char key, int x, int y)
+{
+    if (key == 's' || key == 'S')
+    {
+        startGame = 1;
+        gameOver = 0;
+        eggs_caught = 0;
+        missed_eggs = 0;
+        egg_speed = 0.4;
+        egg_start();
+    }
+    if (key == 'q' || key == 'Q')
+        exit(0);
+}
 
 
 
