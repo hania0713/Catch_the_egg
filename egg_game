@@ -121,4 +121,14 @@ void drawHen(int i, int j)
     glVertex2f(i + 25, j + 40);
     glEnd();
 
+// ---- Head ----
+    glColor3f(1.0, 0.8, 0.6);
+    glBegin(GL_POLYGON);
+    for (int t = 0; t <= 360; t++)
+    {
+        float x = i + 105 + 15 * cos(t * PI / 180);
+        float y = j + 70 + 15 * sin(t * PI / 180);
+        glVertex2f(x, y);
+    }
+    glEnd();
 
