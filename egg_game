@@ -98,6 +98,8 @@ void drawGround()
     }
 }
 
+// ---------- Hen ----------
+void drawHen(int i, int j)
 
 
 
