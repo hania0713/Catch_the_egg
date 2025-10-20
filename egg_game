@@ -58,6 +58,23 @@ void drawSun(float x, float y)
     glEnd();
 }
 
+// ---------- Clouds ----------
+void drawCloud(float x, float y)
+{
+    glColor3f(1.0, 1.0, 1.0);
+    for (int i = 0; i < 3; i++)
+    {
+        glBegin(GL_POLYGON);
+        for (int t = 0; t <= 360; t++)
+        {
+            float cx = x + i * 20 + 15 * cos(t * PI / 180);
+            float cy = y + 10 * sin(t * PI / 180);
+            glVertex2f(cx, cy);
+        }
+        glEnd();
+    }
+}
+
 
 
 
