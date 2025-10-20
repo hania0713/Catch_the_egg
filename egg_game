@@ -48,6 +48,17 @@ void drawSky()
     glEnd();
 }
 
+// ---------- Sun ----------
+void drawSun(float x, float y)
+{
+    glColor3f(1.0, 0.9, 0.3);
+    glBegin(GL_POLYGON);
+    for (int t = 0; t <= 360; t++)
+        glVertex2f(x + 35 * cos(t * PI / 180), y + 35 * sin(t * PI / 180));
+    glEnd();
+}
+
+
 
 
 
