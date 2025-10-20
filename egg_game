@@ -113,5 +113,12 @@ void drawHen(int i, int j)
     }
     glEnd();
     glPopMatrix();
+// ---- Tail ----
+    glColor3f(0.7, 0.4, 0.2);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(i + 30, j + 55);
+    glVertex2f(i + 15, j + 70);
+    glVertex2f(i + 25, j + 40);
+    glEnd();
 
 
