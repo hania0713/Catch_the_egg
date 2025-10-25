@@ -462,7 +462,7 @@ int main(int argc, char **argv)
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(a, b);
-    glutCreateWindow("Catch The Egg - Multi-Egg Edition");
+    glutCreateWindow("Catch The Egg");
 
     glClearColor(0.4, 0.7, 1.0, 0.0);
     glMatrixMode(GL_PROJECTION);
